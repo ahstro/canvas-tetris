@@ -1,10 +1,5 @@
-A very simple HTML5 version of Tetris, for educational purposes, made in 45 minutes.
-
-Watch the making-of timelapse:
-http://www.youtube.com/watch?v=GQTZ_TPxJhM
-
-Play:
-http://dionyziz.logimus.com/tetris/
+This is my fork of [dionyziz's canvas-tetris](https://github.com/dionyziz/canvas-tetris/).
+I rewrote the entire code to learn how it worked, but it's originally their's.
 
 License
 =======
