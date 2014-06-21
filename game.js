@@ -52,8 +52,13 @@ function newMino(){
     }
 
     // Position where the mino will spawn.
-    curX = 5;
     curY = 0;
+    if(id == 0){
+        curX = 3;
+    }
+    else{
+        curX = 4;
+    }
 }
 
 // Clear the board
