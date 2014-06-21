@@ -14,6 +14,7 @@ h1{
 }
 
 canvas{
+    background-color: #eeeeee;
     display: block;
     margin: auto;
     border: 1px solid black;
