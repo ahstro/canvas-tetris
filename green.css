@@ -1,0 +1,39 @@
+html{
+    font-size: 16px; /* Sets the root font-size so that rems work properly. */
+    overflow-y: scroll; /* Makes the scrollbar appear regardless of page height. Prevents jumping. */
+    -webkit-text-size-adjust: 100%; /* Prevents mobile browsers from adjusting the font. */
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background-color: #dddddd;
+    line-height: 0rem;
+}
+
+
+h1{
+    text-align: center;
+}
+
+canvas{
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+}
+
+/* Sets the colors when selecting text. */
+::selection{
+    background-color: rgba(238, 238, 238, 0.99); /* 0.99 fixes Webkit bullshit. */
+    color: #fdd190;
+}
+::-moz-selection{
+    background-color: #eeeeee;
+    color: #333333;
+}
+
+/* Fixes a bug with SVG files in IE9. */
+svg:not(:root){overflow: hidden;}
+
+/* Fixes some image resizing bug in IE7. */
+img{-ms-interpolation-mode: bicubic;}
+
+
+
