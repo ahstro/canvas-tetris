@@ -5,7 +5,8 @@ var board = [];
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple']; // roygbiv?
 var shapes = [
         // I-tetramino
-        [1,1,1,1],
+        [0,0,0,0,
+         1,1,1,1],
 
         // O-tetramino
         [1,1,
