@@ -35,8 +35,7 @@ var shapes = [
 // Creates a square shape in variable 'current' to put the tetramino in.
 // The square shape allows it to rotate properly.
 function newMino(){
-    //var id = Math.floor(Math.random() * shapes.length); // Get random shape.
-    var id = 3;
+    var id = Math.floor(Math.random() * shapes.length); // Get random shape.
     var shape = shapes[id]; // Maintain id for color filling.
 
     current = [];
