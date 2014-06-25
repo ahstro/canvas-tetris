@@ -68,11 +68,11 @@ function newMino(){
 
     // Position where the mino will spawn.
     curY = 0;
-    if(id == 0){
-        curX = 3;
+    if(id == 1){
+        curX = 4;
     }
     else{
-        curX = 4;
+        curX = 3;
     }
 }
 
