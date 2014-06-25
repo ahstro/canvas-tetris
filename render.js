@@ -38,8 +38,8 @@ function render(){
         }
     }
 
-    for(var y = 0; y < 4; ++y){
-        for(var x = 0; x < 4; ++x){
+    for(var y = 0; y < sq; ++y){
+        for(var x = 0; x < sq; ++x){
             if(current[y][x]){
                 context.strokeStyle = minoStroke;
                 context.fillStyle = colors[current[y][x]-1];
