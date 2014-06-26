@@ -2,7 +2,7 @@
 var cols = 10, rows = 20;
 var lose, interval, current, curX, curY, sq;
 var board = [];
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple'];
+var colors = ['cyan', 'yellow', 'orange', 'blue', 'purple', 'green', 'red'];
 var shapes = [
         // I-tetramino
         [0,0,0,0,
