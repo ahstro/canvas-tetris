@@ -7,7 +7,7 @@ function random(){
 
     // Gets a random mino from the bag, adds it to the
     // drop queue and removes it form the temporary bag.
-    for(var i = 0; i < bag.length; i++){
+    for(var i = 0; i < bag.length; ++i){
         var n = Math.floor(Math.random() * tmpBag.length);
         drop.push(tmpBag[n]);
         tmpBag.splice(n, 1);
