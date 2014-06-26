@@ -2,7 +2,7 @@
 var cols = 10, rows = 20;
 var lose, interval, current, curX, curY, sq;
 var board = [];
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple']; // roygbiv?
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple'];
 var shapes = [
         // I-tetramino
         [0,0,0,0,
@@ -45,6 +45,7 @@ function newMino(){
 
     current = [];
 
+    // Sets the appropriate size of the shape square.
     switch(id){
         case 0:
             sq = 4;
@@ -57,6 +58,7 @@ function newMino(){
             break;
     } 
 
+    // Create mino array.
     for (var y = 0; y < sq; ++y){
         current[y] = [];
         for (var x = 0; x < sq; ++x){
@@ -170,13 +172,12 @@ function keyPress(key){
                 ++curY;
             }
             break;
-        case 'rotate': // 'rotateClockwise'
+        case 'rotate':
             var rotated = rotate(current);
             if (valid(0,0,rotated)){
                 current = rotated;
             }
             break;
-        // case 'rotateAnti':
     }
 }
 
