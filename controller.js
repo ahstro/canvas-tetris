@@ -1,5 +1,6 @@
 document.body.onkeydown = function(e){
     var keys = {
+        32: 'hard',
         37: 'left',
         38: 'rotate',
         39: 'right',

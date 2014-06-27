@@ -171,6 +171,13 @@ function keyPress(key){
                 ++curY;
             }
             break;
+        case 'hard':
+            var i = 0;
+            do{
+                ++i;
+            }while(valid(0,i));
+            curY = curY + (i - 1);
+            break;
         case 'rotate':
             var rotated = rotate(current);
             if (valid(0,0,rotated)){
