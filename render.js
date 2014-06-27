@@ -4,6 +4,15 @@ var context = canvas.getContext('2d');
 var width = 300, height = 600;
 var block_width = width / cols, block_height = height / rows;
 
+// Colors
+var cyan = '#1dd1d1';
+var yellow = '#d1d11d';
+var orange = '#d1921d';
+var blue = '#1d1dd1';
+var purple = '#801280';
+var green = '#128012';
+var red = '#d11e1e';
+var colors = [cyan, yellow, orange, blue, purple, green, red];
 var minoStroke = 'black';
 var gridStroke = '#e4e4e4';
 var gridFill = '#eeeeee';
