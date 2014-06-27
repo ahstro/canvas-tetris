@@ -251,12 +251,20 @@ function valid( offsetX, offsetY, newCurrent){
 // Pause game.
 function pause(){
     if(!paused){
+        // Stops the game.
         clearInterval(interval);
         clearInterval(renderInterval);
+
+        // Lets the game know it's paused.
         paused = true;
+
+        // Clears screen and renders 'Paused' text.
+        var text = 'Paused';
+        var posX = (width - context.measureText(text).width) / 2;
+        var posY = height / 2;
         context.clearRect(0,0,width,height);
         context.fillStyle = '#222222';
-        context.fillText('Paused', 40, 300);
+        context.fillText(text, posX, posY);
     }
     else if(paused){
         interval = setInterval(tick, 250);

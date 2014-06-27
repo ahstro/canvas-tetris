@@ -3,6 +3,8 @@ var canvas = document.getElementsByTagName('canvas')[0];
 var context = canvas.getContext('2d');
 var width = 300, height = 600;
 var block_width = width / cols, block_height = height / rows;
+
+// Pause screen font
 context.font = '64px Arial';
 
 // Colors
