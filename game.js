@@ -189,6 +189,7 @@ function keyPress(key){
                 ++i;
             }while(valid(0,i));
             curY = curY + (i - 1);
+            freeze();
             break;
         case 'rotate':
             var rotated = rotate(current);
