@@ -3,6 +3,7 @@ var canvas = document.getElementsByTagName('canvas')[0];
 var context = canvas.getContext('2d');
 var width = 300, height = 600;
 var block_width = width / cols, block_height = height / rows;
+context.font = '64px Arial';
 
 // Colors
 var cyan = '#1dd1d1';
@@ -80,4 +81,4 @@ function render(){
 
 }
 
-setInterval(render, 30);
+renderInterval = setInterval(render, 30);

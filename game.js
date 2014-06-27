@@ -167,36 +167,41 @@ function clearLines(){
 
 // Handles key presses. Duh.
 function keyPress(key){
-    switch (key){
-        case 'left':
-            if (valid(-1)){
+    if(!paused){
+        switch (key){
+            case 'left':
+                if (valid(-1)){
                 --curX;
             }
             break;
-        case 'right':
-            if (valid(1)){
+            case 'right':
+                if (valid(1)){
                 ++curX;
             }
             break;
-        case 'down':
-            if (valid(0, 1)){
+            case 'down':
+                if (valid(0, 1)){
                 ++curY;
             }
             break;
-        case 'hard':
-            var i = 0;
+            case 'hard':
+                var i = 0;
             do{
                 ++i;
             }while(valid(0,i));
             curY = curY + (i - 1);
             freeze();
             break;
-        case 'rotate':
-            checkRotationValidity(rotate(current));
+            case 'rotate':
+                checkRotationValidity(rotate(current));
             break;
-        case 'rotateAnti':
-            checkRotationValidity(rotateAnti(current));
+            case 'rotateAnti':
+                checkRotationValidity(rotateAnti(current));
             break;
+        }
+    }
+    if(key == 'pause'){
+        pause();
     }
 }
 
@@ -243,6 +248,23 @@ function valid( offsetX, offsetY, newCurrent){
     return true;
 }
 
+// Pause game.
+function pause(){
+    if(!paused){
+        clearInterval(interval);
+        clearInterval(renderInterval);
+        paused = true;
+        context.clearRect(0,0,width,height);
+        context.fillStyle = '#222222';
+        context.fillText('Paused', 40, 300);
+    }
+    else if(paused){
+        interval = setInterval(tick, 250);
+        renderInterval = setInterval(render, 30);
+        paused = false;
+    }
+}
+
 // Starts a new game.
 function newGame(){
     clearInterval(interval);
@@ -250,6 +272,7 @@ function newGame(){
     newMino();
     interval = setInterval(tick, 250);
     lose = false;
+    paused = false;
 }
 
 newGame();
