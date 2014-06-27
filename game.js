@@ -192,17 +192,26 @@ function keyPress(key){
             freeze();
             break;
         case 'rotate':
-            var rotated = rotate(current);
-            if (valid(0,0,rotated)){
-                current = rotated;
-            }
+            checkRotationValidity(rotate(current));
             break;
         case 'rotateAnti':
-            var rotated = rotateAnti(current);
-            if (valid(0,0,rotated)){
-                current = rotated;
-            }
+            checkRotationValidity(rotateAnti(current));
             break;
+    }
+}
+
+// Checks rotation validity.
+function checkRotationValidity(rotated){
+    if (valid(0,0,rotated)){
+        current = rotated;
+    }
+    else if(valid(1,0,rotated)){
+        ++curX;
+        current = rotated;
+    }
+    else if(valid(-1,0,rotated)){
+        --curX;
+        current = rotated;
     }
 }
 
