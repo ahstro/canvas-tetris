@@ -120,13 +120,25 @@ function freeze(){
     }
 }
 
-// Returns rotates the rotated shape 'current' perpendicularly anticlockwwise
+// Rotates the mino 90 degrees clockwise
 function rotate(current){
     var newCurrent = [];
     for (var y = 0; y < sq; ++y){
         newCurrent[y] = [];
         for (var x = 0; x < sq; ++x){
-            newCurrent[y][x] = current[(sq - 1)-x][y];
+            newCurrent[y][x] = current[(sq - 1) - x][y];
+        }
+    }
+    return newCurrent;
+}
+
+// Rotates the mino 90 degrees anticlockwise
+function rotateAnti(current){
+    var newCurrent = [];
+    for (var y = 0; y < sq; ++y){
+        newCurrent[y] = [];
+        for (var x = 0; x < sq; ++x){
+            newCurrent[y][x] = current[x][(sq - 1) - y];
         }
     }
     return newCurrent;
@@ -180,6 +192,12 @@ function keyPress(key){
             break;
         case 'rotate':
             var rotated = rotate(current);
+            if (valid(0,0,rotated)){
+                current = rotated;
+            }
+            break;
+        case 'rotateAnti':
+            var rotated = rotateAnti(current);
             if (valid(0,0,rotated)){
                 current = rotated;
             }

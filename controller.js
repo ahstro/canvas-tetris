@@ -3,6 +3,7 @@ document.body.onkeydown = function(e){
         32: 'hard',
         37: 'left',
         38: 'rotate',
+        90: 'rotateAnti',
         39: 'right',
         40: 'down'
     };
