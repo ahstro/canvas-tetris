@@ -13,9 +13,11 @@ var purple = '#801280';
 var green = '#128012';
 var red = '#d11e1e';
 var colors = [cyan, yellow, orange, blue, purple, green, red];
-var minoStroke = 'black';
+var minoStroke = '#333333';
 var gridStroke = '#e4e4e4';
 var gridFill = '#eeeeee';
+
+context.lineWidth = 4;
 
 
 // Draw a single square at (x, y)

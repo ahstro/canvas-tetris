@@ -17,7 +17,7 @@ canvas{
     background-color: #eeeeee;
     display: block;
     margin: auto;
-    border: 1px solid black;
+    border: 6px solid #222222;
 }
 
 /* Sets the colors when selecting text. */
