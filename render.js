@@ -16,6 +16,8 @@ var colors = [cyan, yellow, orange, blue, purple, green, red];
 var minoStroke = '#333333';
 var gridStroke = '#e4e4e4';
 var gridFill = '#eeeeee';
+var ghostStroke = '#bbbbbb';
+var ghostFill = '#cccccc';
 
 context.lineWidth = 4;
 
@@ -40,6 +42,21 @@ function render(){
         }
     }
 
+    // Renders ghost piece.
+    for(var y = 0; y < sq; ++y){
+        for(var x = 0; x < sq; ++x){
+            var i = 0;
+            do{
+                ++i;
+            }while(valid(0,i));
+            if(current[y][x]){
+                context.strokeStyle = ghostStroke;
+                context.fillStyle = ghostFill;
+                drawBlock(curX + x, curY + y + (i - 1));
+            }
+        }
+    }
+
     // Renders mino blocks.
     for(var x = 0; x < cols; ++x){
         for(var y = 0; y < rows; ++y){
@@ -60,6 +77,7 @@ function render(){
             }
         }
     }
+
 }
 
 setInterval(render, 30);
