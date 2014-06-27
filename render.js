@@ -31,19 +31,21 @@ function render(){
     // Clears matrix.
     context.clearRect(0,0,width,height);
 
-    //
+    // Renders background grid.
     for(var x = 0; x < cols; ++x){
         for(var y = 0; y < rows; ++y){
-            // If there's a mino there, render it...
+            context.strokeStyle = gridStroke;
+            context.fillStyle = gridFill;
+            drawBlock(x,y);
+        }
+    }
+
+    // Renders mino blocks.
+    for(var x = 0; x < cols; ++x){
+        for(var y = 0; y < rows; ++y){
             if(board[y][x]){
                 context.strokeStyle = minoStroke;
                 context.fillStyle = colors[board[y][x]-1];
-                drawBlock(x,y);
-            }
-            // ...otherwise, render the background grid.
-            else{
-                context.strokeStyle = gridStroke;
-                context.fillStyle = gridFill;
                 drawBlock(x,y);
             }
         }
